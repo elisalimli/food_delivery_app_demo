@@ -1,8 +1,12 @@
 import { StatusBar } from 'expo-status-bar';
+import { Platform, Text,StyleSheet, View } from 'react-native';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
+import { create } from 'twrnc';
 
 import useCachedResources from './hooks/useCachedResources';
-import Navigation from './navigation';
+
+// creating tailwind css instance
+export const tw = create(require(`./tailwind.config.js`));
 
 export default function App() {
   const isLoadingComplete = useCachedResources();
@@ -11,10 +15,16 @@ export default function App() {
     return null;
   } else {
     return (
-      <SafeAreaProvider>
-        <Navigation  />
-        <StatusBar />
+      <SafeAreaProvider style={styles.AndroidSafeArea}>
+        <StatusBar backgroundColor='red'/>
+        <View><Text>example</Text></View>
       </SafeAreaProvider>
     );
   }
 }
+
+const styles = StyleSheet.create({
+  AndroidSafeArea: {
+    paddingTop: Platform.OS === 'android' ? 50 : 0
+  }
+});
