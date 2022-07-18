@@ -17,7 +17,7 @@ export default function App() {
     return (
       <SafeAreaProvider style={styles.AndroidSafeArea}>
         <StatusBar backgroundColor='red'/>
-        <View><Text>example</Text></View>
+        <View><Text style={tw`text-primary`}>example</Text></View>
       </SafeAreaProvider>
     );
   }
