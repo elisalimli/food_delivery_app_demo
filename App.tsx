@@ -17,7 +17,7 @@ export default function App() {
     return (
       <SafeAreaProvider style={styles.AndroidSafeArea}>
         <StatusBar backgroundColor='red'/>
-        <View><Text style={tw`text-primary`}>example</Text></View>
+        <View><Text style={tw`h1`} >Lorem ipsum bla bla ola bila fila noy si me</Text></View>
       </SafeAreaProvider>
     );
   }
