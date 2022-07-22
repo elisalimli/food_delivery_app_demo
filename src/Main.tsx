@@ -5,6 +5,7 @@ import { createStackNavigator } from "@react-navigation/stack";
 import React from "react";
 import { View, Text, StatusBar, ColorValue } from "react-native";
 import tailwindConfig from "../tailwind.config";
+import Tabs from "./navigation/tabs";
 import { Home,OrderDelivery,Restaurant } from "./screens";
 import { tw } from "./utils";
 
@@ -34,7 +35,7 @@ const Main = () => {
         }}
         initialRouteName="Home"
       >
-        <RootStack.Screen name="Home" component={Home} />
+        <RootStack.Screen name="Home" component={Tabs} />
         <RootStack.Screen name="Restaurant" component={Restaurant} />
         <RootStack.Screen name="OrderDelivery" component={OrderDelivery} />
       </RootStack.Navigator>
