@@ -2,7 +2,7 @@ import { StatusBar } from "expo-status-bar";
 import { Platform, Text, StyleSheet, View } from "react-native";
 import { SafeAreaProvider } from "react-native-safe-area-context";
 import { create } from "twrnc";
-import { useCachedResources } from "./src/hooks/useCachedResources";
+import { useCachedResources } from "./src/hooks";
 import Main from "./src/Main";
 
 

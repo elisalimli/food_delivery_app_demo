@@ -1,11 +1,13 @@
-import React from "react";
-import { ColorValue, Image, Text, View } from "react-native";
-import { NavigationContainer } from "@react-navigation/native";
-import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
-import { Home } from "../screens";
-import { icons } from "../constants";
-import { tw } from "../utils";
+import {
+    createBottomTabNavigator
+} from "@react-navigation/bottom-tabs";
 import { NativeStackScreenProps } from "@react-navigation/native-stack";
+import React from "react";
+import { ColorValue, Image } from "react-native";
+import { icons } from "../constants";
+import { Home } from "../screens";
+import { tw } from "../utils";
+import TabBarCustomButton from "./TabBarCustomButton";
 
 type TabStackParamList = {
   Home: undefined;
@@ -24,7 +26,7 @@ export default function Tabs() {
     <Tab.Navigator
       screenOptions={({ route }) => ({
         tabBarShowLabel: false,
-        tabBarIcon: ({ focused, color, size }) => {
+        tabBarIcon: ({ focused }) => {
           let icon;
           const { search, like, user, cutlery } = icons;
           // chosing the icon for each route
@@ -55,15 +57,18 @@ export default function Tabs() {
             />
           );
         },
+        tabBarButton: TabBarCustomButton,
 
         tabBarActiveTintColor: "tomato",
         tabBarInactiveTintColor: "gray",
         headerShown: false,
-        tabBarStyle:{
-            backgroundColor:'transparent',
-            borderTopWidth:0,
-        }
-    })}
+        tabBarStyle: {
+          backgroundColor: "#f2f2f2",
+          borderTopWidth: 0,
+          // for android(removing shadow stuff)
+          elevation: 0,
+        },
+      })}
     >
       <Tab.Screen name="Home" component={Home} />
       <Tab.Screen name="Search" component={Home} />

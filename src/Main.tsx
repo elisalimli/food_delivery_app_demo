@@ -3,11 +3,10 @@ import { NavigationContainer } from "@react-navigation/native";
 import { NativeStackScreenProps } from "@react-navigation/native-stack";
 import { createStackNavigator } from "@react-navigation/stack";
 import React from "react";
-import { View, Text, StatusBar, ColorValue } from "react-native";
-import tailwindConfig from "../tailwind.config";
+import { StatusBar } from "react-native";
 import Tabs from "./navigation/tabs";
-import { Home,OrderDelivery,Restaurant } from "./screens";
-import { tw } from "./utils";
+import { OrderDelivery, Restaurant } from "./screens";
+import { useGetColor } from "./hooks";
 
 type RootStackParamList = {
   Home: undefined;
@@ -23,7 +22,7 @@ const RootStack = createStackNavigator<RootStackParamList>();
 const Main = () => {
   return (
     <NavigationContainer>
-      <StatusBar backgroundColor={tw`text-primary`.color as ColorValue} />
+      <StatusBar backgroundColor={useGetColor("primary")} />
 
       <RootStack.Navigator
         screenOptions={{
