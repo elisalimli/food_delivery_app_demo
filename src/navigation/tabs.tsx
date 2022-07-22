@@ -1,12 +1,11 @@
-import {
-    createBottomTabNavigator
-} from "@react-navigation/bottom-tabs";
+import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { NativeStackScreenProps } from "@react-navigation/native-stack";
 import React from "react";
 import { ColorValue, Image } from "react-native";
 import { icons } from "../constants";
 import { Home } from "../screens";
 import { tw } from "../utils";
+import CustomTabBar from "./CustomTabBar";
 import TabBarCustomButton from "./TabBarCustomButton";
 
 type TabStackParamList = {
@@ -24,6 +23,7 @@ const Tab = createBottomTabNavigator<TabStackParamList>();
 export default function Tabs() {
   return (
     <Tab.Navigator
+      tabBar={(props) => <CustomTabBar props={props} />}
       screenOptions={({ route }) => ({
         tabBarShowLabel: false,
         tabBarIcon: ({ focused }) => {
