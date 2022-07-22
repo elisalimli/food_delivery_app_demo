@@ -1,4 +1,3 @@
-
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   theme: {
@@ -23,7 +22,8 @@ module.exports = {
         "RobotoCondensed-LightItalic": ["RobotoCondensed-LightItalic"],
         "SpaceMono-Regular": ["SpaceMono-Regular"],
         "SpaceMono-Regular": ["SpaceMono-Regular"],
-      },   colors: {
+      },
+      colors: {
         transparent: "transparent",
         current: "currentColor",
         primary: "#FC6D3F", // orange
@@ -47,9 +47,9 @@ module.exports = {
         darkgray: "#898C95",
       },
       lineHeight: {
-        "1":22,
-        "2":30,
-        "3":36
+        1: 22,
+        2: 30,
+        3: 36,
       },
       // fontSize: {
       //   xs: 12,
