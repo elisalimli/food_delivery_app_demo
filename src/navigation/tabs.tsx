@@ -6,6 +6,7 @@ import { Home } from "../screens";
 import { icons } from "../constants";
 import { tw } from "../utils";
 import { NativeStackScreenProps } from "@react-navigation/native-stack";
+
 type TabStackParamList = {
   Home: undefined;
   Search: undefined;
@@ -24,24 +25,25 @@ export default function Tabs() {
       screenOptions={({ route }) => ({
         tabBarShowLabel: false,
         tabBarIcon: ({ focused, color, size }) => {
-          let source;
+          let icon;
           const { search, like, user, cutlery } = icons;
+          // chosing the icon for each route
           switch (route.name) {
             case "Search":
-              source = search;
+              icon = search;
               break;
             case "Like":
-              source = like;
+              icon = like;
               break;
             case "User":
-              source = user;
+              icon = user;
               break;
             default:
-              source = cutlery;
+              icon = cutlery;
           }
           return (
             <Image
-              source={source}
+              source={icon}
               resizeMode="contain"
               style={{
                 width: 25,
@@ -53,10 +55,15 @@ export default function Tabs() {
             />
           );
         },
+
         tabBarActiveTintColor: "tomato",
         tabBarInactiveTintColor: "gray",
         headerShown: false,
-      })}
+        tabBarStyle:{
+            backgroundColor:'transparent',
+            borderTopWidth:0,
+        }
+    })}
     >
       <Tab.Screen name="Home" component={Home} />
       <Tab.Screen name="Search" component={Home} />
