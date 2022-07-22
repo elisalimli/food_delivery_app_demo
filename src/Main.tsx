@@ -22,8 +22,7 @@ const RootStack = createStackNavigator<RootStackParamList>();
 const Main = () => {
   return (
     <NavigationContainer>
-      {/* @todo fix typescript error */}
-      <StatusBar backgroundColor={tailwindConfig.theme?.extend?.colors?.primary} />
+      <StatusBar backgroundColor={tw`text-primary`.color as ColorValue} />
 
       <RootStack.Navigator
         screenOptions={{
