@@ -1,4 +1,4 @@
-const twrnc = require('twrnc'); // DO THIS
+const twrnc = require("twrnc"); // DO THIS
 
 /** @type {import('tailwindcss').Config} */
 module.exports = {
@@ -16,7 +16,7 @@ module.exports = {
         body3: `font-Roboto-Regular text-base`,
         body4: `font-Roboto-Regular text-sm`,
         body5: `font-Roboto-Regular text-xs`,
-        'body-text': `font-serif leading-relaxed tracking-wide text-gray-800`,
+        "body-text": `font-serif leading-relaxed tracking-wide text-gray-800`,
       });
     }),
   ],

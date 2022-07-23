@@ -1,14 +1,14 @@
 import React from "react";
-import {
-    View,Text
-} from "react-native";
+import { SafeAreaView } from "react-native-safe-area-context";
 import { tw } from "../utils";
+import Header from "./Home/Header";
 
 const Home = () => {
-    return <View>
-        <Text>Home</Text>
-    </View>
-}
+  return (
+    <SafeAreaView style={tw`flex-1 bg-lightGray400`}>
+      <Header />
+    </SafeAreaView>
+  );
+};
 
-export default Home
-
+export default Home;
