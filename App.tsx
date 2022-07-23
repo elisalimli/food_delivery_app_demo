@@ -5,8 +5,6 @@ import { create } from "twrnc";
 import { useCachedResources } from "./src/hooks";
 import Main from "./src/Main";
 
-
-
 export default function App() {
   const isLoadingComplete = useCachedResources();
 

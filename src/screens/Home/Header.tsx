@@ -2,13 +2,14 @@ import React from "react";
 import { Image, Text, View } from "react-native";
 import { TouchableOpacity } from "react-native-gesture-handler";
 import { icons } from "../../constants";
+import { useDataStore } from "../../stores";
 import { tw } from "../../utils";
 
 // Dummy Datas
 
 const LeftHeader = () => {
   return (
-    <View style={tw`flex-1 justify-center items-start pl-4`}>
+    <View style={tw`flex-1 justify-center items-start`}>
       <TouchableOpacity>
         <Image
           resizeMode="contain"
@@ -21,18 +22,19 @@ const LeftHeader = () => {
 };
 
 const MiddleHeader = () => {
+  const { currentLocation } = useDataStore();
   return (
     <View
       style={tw`flex-3 rounded-3xl flex items-center justify-center bg-lightGray300`}
     >
-      <Text style={tw`h4`}>745 Lincoln PI</Text>
+      <Text style={tw`h4`}>{currentLocation.streetName}</Text>
     </View>
   );
 };
 
 const RightHeader = () => {
   return (
-    <View style={tw`flex-1 justify-center items-end pr-4`}>
+    <View style={tw`flex-1 justify-center items-end`}>
       <TouchableOpacity style={tw`justify-center flex-2`}>
         <Image
           resizeMode="contain"
@@ -46,7 +48,7 @@ const RightHeader = () => {
 
 const Header = () => {
   return (
-    <View style={tw`flex-row h-16 pt-4`}>
+    <View style={tw`flex-row h-16 pt-4 mb-8 `}>
       <LeftHeader />
       <MiddleHeader />
       <RightHeader />

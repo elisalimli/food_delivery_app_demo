@@ -1,3 +1,4 @@
+import { combine } from "zustand/middleware";
 import create from "zustand";
 import { icons, images } from "../constants";
 
@@ -341,29 +342,25 @@ interface IRestaurant {
   menu: IRestaurantMenu[];
 }
 
-interface ICategory {
+export interface ICategory {
   id: number;
   name: string;
   icon: any;
 }
 
-interface BearState {
-  currentLocation: {
-    streetName: string;
-    gps: {
-      latitude: number;
-      longitude: number;
-    };
-  };
-  restuarants: IRestaurant[];
-  selectedCategory: string | null;
-  categories: ICategory[];
-}
+export const useDataStore = create(
+  combine(
+    {
+      currentLocation: initialCurrentLocation,
+      categories: categoryData,
+      restuarants: restaurantData,
+      selectedCategoryId: 2,
+    },
+    (set) => ({
+      setSelectedCategoryId: (id: number) =>
+        set(() => ({ selectedCategoryId: id })),
+    })
+  )
+);
 
-const useDataStore = create<BearState>((set) => ({
-  currentLocation: initialCurrentLocation,
-  categories: categoryData,
-  restuarants: restaurantData,
-  selectedCategory: null,
-  //   increase: () => set((state) => ({ bears: state.bears + 1 })),
-}));
+export default useDataStore;
