@@ -1,7 +1,7 @@
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { NativeStackScreenProps } from "@react-navigation/native-stack";
 import React from "react";
-import { ColorValue, Image } from "react-native";
+import { ColorValue, Image, Text } from "react-native";
 import { icons } from "../constants";
 import { Home } from "../screens";
 import { tw } from "../utils";
@@ -71,9 +71,9 @@ export default function Tabs() {
       })}
     >
       <Tab.Screen name="Home" component={Home} />
-      <Tab.Screen name="Search" component={Home} />
-      <Tab.Screen name="Like" component={Home} />
-      <Tab.Screen name="User" component={Home} />
+      <Tab.Screen name="Search" component={() => <Text>Search</Text>} />
+      <Tab.Screen name="Like" component={() => <Text>Like</Text>} />
+      <Tab.Screen name="User" component={() => <Text>User</Text>} />
     </Tab.Navigator>
   );
 }

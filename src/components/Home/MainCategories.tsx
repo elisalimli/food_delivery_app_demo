@@ -3,6 +3,7 @@ import { FlatList, Text, View } from "react-native";
 import { useDataStore } from "../../stores";
 import { tw } from "../../utils";
 import Category from "./CategoryItem";
+import uuid from "react-native-uuid";
 
 const MainCategories = () => {
   const { categories } = useDataStore();
@@ -14,7 +15,7 @@ const MainCategories = () => {
         data={categories}
         showsHorizontalScrollIndicator={false}
         horizontal
-        keyExtractor={(item) => `${item.id}`}
+        keyExtractor={(item) => `${item.id}-${uuid.v4()}`}
         renderItem={(props) => <Category {...props} />}
         contentContainerStyle={tw`py-4 px-1`}
       />

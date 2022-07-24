@@ -18,10 +18,7 @@ const RestuarantInfo: React.FC<IRestuarantInfoProps> = ({ item }) => {
       <Text style={tw`body2`}>{name}</Text>
       <View style={tw`py-4 flex-row items-center`}>
         {/* rating */}
-        <Image
-          source={icons.star}
-          style={tw`text-black tint-primary w-4 h-4 mr-2`}
-        />
+        <Image source={icons.star} style={tw`tint-primary w-4 h-4 mr-2`} />
         <Text style={tw`mr-6 body3`}>{rating}</Text>
 
         {/* Categories */}

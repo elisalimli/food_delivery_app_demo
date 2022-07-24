@@ -5,10 +5,15 @@ import { ICategory } from "../../stores/useDataStore";
 import { tw } from "../../utils";
 
 const Category = ({ item }: { item: ICategory }) => {
-  const { setSelectedCategoryId, selectedCategoryId } = useDataStore();
+  const { setSelectedCategoryId, setRestuarants, selectedCategoryId } =
+    useDataStore();
   const { id, name, icon } = item;
+
   const isActive = selectedCategoryId === id;
-  const handlePress = () => setSelectedCategoryId(id);
+  const handlePress = () => {
+    setSelectedCategoryId(id);
+    setRestuarants(id);
+  };
 
   return (
     <TouchableOpacity
