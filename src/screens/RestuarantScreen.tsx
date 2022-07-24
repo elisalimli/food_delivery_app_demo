@@ -1,17 +1,17 @@
 import React from "react";
 import { View, Text } from "react-native";
+import RestuarantHeader from "../components/RestuarantScreen/RestuarantHeader";
 import { useRestuarantStore } from "../stores";
+import { tw } from "../utils";
 
-const Restaurant = () => {
+const RestaurantScreen = () => {
   const { restuarantItem } = useRestuarantStore();
-  console.log(restuarantItem, "item");
+
   return (
-    <View>
-      <Text>
-        {restuarantItem.duration},{restuarantItem?.courier?.name}
-      </Text>
+    <View style={tw`flex-1 bg-lightGray200`}>
+      <RestuarantHeader />
     </View>
   );
 };
 
-export default Restaurant;
+export default RestaurantScreen;

@@ -1,9 +1,9 @@
 import React from "react";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { tw } from "../utils";
-import Header from "../components/Home/Header";
-import MainCategories from "../components/Home/MainCategories";
-import Restaurants from "../components/Home/Restaurants";
+import Header from "../components/HomeScreen/Header";
+import MainCategories from "../components/HomeScreen/MainCategories";
+import Restaurants from "../components/HomeScreen/Restaurants";
 
 const Home = () => {
   return (
