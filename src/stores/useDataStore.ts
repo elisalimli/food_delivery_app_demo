@@ -273,7 +273,7 @@ const restaurantData = [
     id: 6,
     name: "Dessets",
     rating: 4.9,
-    categories: [9, 10],
+    categories: [9, 8],
     priceRating: affordable,
     photo: images.kek_lapis_shop,
     duration: "35 - 40 min",
