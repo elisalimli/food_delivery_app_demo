@@ -1,16 +1,28 @@
+import { useNavigation } from "@react-navigation/native";
 import React from "react";
 import { TouchableOpacity, View } from "react-native";
-import { IRestaurant } from "../../../stores/useDataStore";
+import { RootStackNavigationProps } from "../../../Screens";
+import { useRestuarantStore } from "../../../stores";
+import { IRestaurantItem } from "../../../stores/useDataStore";
 import { tw } from "../../../utils";
 import RestuarantDuration from "./RestuarantDuration";
 import RestuarantInfo from "./RestuarantInfo";
 import RestuarantPhoto from "./RestuarantPhoto";
 
-const RestaurantItem = ({ item }: { item: IRestaurant }) => {
+const RestaurantItem = ({ item }: { item: IRestaurantItem }) => {
   const { photo, duration } = item;
+  const navigation = useNavigation<RootStackNavigationProps>();
+  const { setRestuarantItem } = useRestuarantStore();
+
+  const handlePress = () => {
+    setRestuarantItem(item);
+    navigation.navigate("Restaurant");
+  };
+
   return (
     <TouchableOpacity
-    // onpress navigate to the Restuarant screen
+      onPress={handlePress}
+      // onpress navigate to the Restuarant screen
     >
       <View>
         {/* photo */}

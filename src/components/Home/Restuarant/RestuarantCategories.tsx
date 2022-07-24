@@ -1,11 +1,11 @@
 import React, { Fragment } from "react";
 import { Text, View } from "react-native";
-import useDataStore, { IRestaurant } from "../../../stores/useDataStore";
+import useDataStore, { IRestaurantItem } from "../../../stores/useDataStore";
 import { tw } from "../../../utils";
 import uuid from "react-native-uuid";
 
 interface IRestuarantCategoriesProps {
-  item: IRestaurant;
+  item: IRestaurantItem;
 }
 
 const RestuarantCategories: React.FC<IRestuarantCategoriesProps> = ({

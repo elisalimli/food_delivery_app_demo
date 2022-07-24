@@ -1,13 +1,13 @@
 import React, { Fragment } from "react";
 import { Image, ImageSourcePropType, Text, View } from "react-native";
 import { icons } from "../../../constants";
-import useDataStore, { IRestaurant } from "../../../stores/useDataStore";
+import useDataStore, { IRestaurantItem } from "../../../stores/useDataStore";
 import { tw } from "../../../utils";
 import RestuarantPriceRating from "./RestuarantPriceRating";
 import RestuarantCategories from "./RestuarantCategories";
 
 interface IRestuarantInfoProps {
-  item: IRestaurant;
+  item: IRestaurantItem;
 }
 
 const RestuarantInfo: React.FC<IRestuarantInfoProps> = ({ item }) => {

@@ -314,7 +314,7 @@ const restaurantData = [
   },
 ];
 
-interface IRestaurantMenu {
+interface IRestaurantItemMenu {
   menuId: number;
   name: string;
   photo: any;
@@ -323,7 +323,7 @@ interface IRestaurantMenu {
   price: number;
 }
 
-export interface IRestaurant {
+export interface IRestaurantItem {
   id: number;
   name: string;
   rating: number;
@@ -339,7 +339,7 @@ export interface IRestaurant {
     avatar: any;
     name: string;
   };
-  menu: IRestaurantMenu[];
+  menu: IRestaurantItemMenu[];
 }
 
 export interface ICategory {
@@ -362,7 +362,7 @@ export const useDataStore = create(
       setRestuarants: (categoryId?: number | null, reset?: boolean) => {
         const newRestuarantData = reset
           ? restaurantData
-          : restaurantData.filter((r) => r.categories.includes(categoryId));
+          : restaurantData.filter((r) => r.categories.includes(categoryId!));
         set(() => ({ restuarants: newRestuarantData }));
       },
     })
