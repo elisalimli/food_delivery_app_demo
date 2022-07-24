@@ -1,5 +1,5 @@
-import Home from "./Home";
-import OrderDelivery from "./OrderDelivery";
-import Restaurant from "./Restaurant";
+import Home from "./HomeScreen";
+import OrderDelivery from "./OrderDeliveryScreen";
+import Restaurant from "./RestuarantScreen";
 
 export { Home, OrderDelivery, Restaurant };
