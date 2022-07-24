@@ -1,5 +1,5 @@
-import React from "react";
-import { FlatList, Text, View } from "react-native";
+import React, { useCallback, useState } from "react";
+import { FlatList, RefreshControl, Text, View } from "react-native";
 import { useDataStore } from "../../stores";
 import { tw } from "../../utils";
 import Category from "./CategoryItem";
@@ -7,6 +7,7 @@ import uuid from "react-native-uuid";
 
 const MainCategories = () => {
   const { categories } = useDataStore();
+
   return (
     <View>
       <Text style={tw`h1`}>Main</Text>

@@ -359,10 +359,10 @@ export const useDataStore = create(
     (set) => ({
       setSelectedCategoryId: (id: number) =>
         set(() => ({ selectedCategoryId: id })),
-      setRestuarants: (categoryId: number) => {
-        const newRestuarantData = restaurantData.filter((r) =>
-          r.categories.includes(categoryId)
-        );
+      setRestuarants: (categoryId?: number | null, reset?: boolean) => {
+        const newRestuarantData = reset
+          ? restaurantData
+          : restaurantData.filter((r) => r.categories.includes(categoryId));
         set(() => ({ restuarants: newRestuarantData }));
       },
     })

@@ -1,15 +1,27 @@
-import React from "react";
-import { FlatList, View } from "react-native";
+import React, { useCallback, useState } from "react";
+import { FlatList, RefreshControl, View } from "react-native";
 import { useDataStore } from "../../stores";
 import { tw } from "../../utils";
 import RestaurantItem from "./Restuarant/RestuarantItem";
 import uuid from "react-native-uuid";
 
 const Restaurants = () => {
-  const { restuarants } = useDataStore();
+  const { restuarants, setRestuarants } = useDataStore();
+  const [refreshing, setRefreshing] = useState(false);
+
+  const onRefresh = useCallback(() => {
+    setRefreshing(true);
+    // resetting the resturants
+    setRestuarants(null, true);
+
+    setRefreshing(false);
+  }, []);
   return (
     <View>
       <FlatList
+        refreshControl={
+          <RefreshControl refreshing={refreshing} onRefresh={onRefresh} />
+        }
         data={restuarants}
         showsVerticalScrollIndicator={false}
         keyExtractor={(item) => `${item.id}-${uuid.v4()}`}

@@ -12,7 +12,7 @@ const Category = ({ item }: { item: ICategory }) => {
   const isActive = selectedCategoryId === id;
   const handlePress = () => {
     setSelectedCategoryId(id);
-    setRestuarants(id);
+    setRestuarants(id, false);
   };
 
   return (
