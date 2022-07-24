@@ -19,14 +19,14 @@ const Category = ({ item }: { item: ICategory }) => {
       ]}
     >
       <View
-        style={tw`w-16 h-16 bg-white rounded-full items-center justify-center`}
+        style={tw`w-12 h-12 bg-white rounded-full items-center justify-center`}
       >
-        <Image source={icon} resizeMode="contain" style={tw`w-12 h-12`} />
+        <Image source={icon} resizeMode="contain" style={tw`w-10 h-10`} />
       </View>
       <Text
         style={[
           tw`text-center mt-6 text-lightGray300 font-medium`,
-          isActive ? tw`text-white mb-4` : tw`text-black`,
+          isActive ? tw`text-white mb-2` : tw`text-black`,
         ]}
       >
         {name}

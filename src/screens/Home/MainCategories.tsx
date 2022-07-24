@@ -2,7 +2,7 @@ import React from "react";
 import { FlatList, Text, View } from "react-native";
 import { useDataStore } from "../../stores";
 import { tw } from "../../utils";
-import Category from "./Category";
+import Category from "./CategoryItem";
 
 const MainCategories = () => {
   const { categories } = useDataStore();
