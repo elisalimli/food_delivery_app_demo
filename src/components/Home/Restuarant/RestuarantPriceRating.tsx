@@ -13,20 +13,14 @@ const RestuarantPriceRating: React.FC<IRestuarantPriceRatingProps> = ({
 }) => {
   return (
     <View style={tw`flex-row`}>
-      {Array.from({ length: priceRating })
-        .fill(0)
-        .map((i) => (
-          <Text style={tw`font-medium`} key={`price-${id}-${uuid.v4()}`}>
-            $
-          </Text>
-        ))}
-      {Array.from({ length: 3 - priceRating })
-        .fill(0)
-        .map((i) => (
-          <Text style={tw`opacity-20 font-medium`} key={`${uuid.v4()}`}>
-            $
-          </Text>
-        ))}
+      {[1, 2, 3].map((i) => (
+        <Text
+          style={[tw`font-medium`, i > priceRating && tw`opacity-20`]}
+          key={`price-${id}-${uuid.v4()}`}
+        >
+          $
+        </Text>
+      ))}
     </View>
   );
 };
