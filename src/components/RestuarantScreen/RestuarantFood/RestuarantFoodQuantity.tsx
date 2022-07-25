@@ -1,6 +1,6 @@
 import React from "react";
 import { Text, TouchableOpacity, View } from "react-native";
-import { tw } from "../../utils";
+import { tw } from "../../../utils";
 
 const RestuarantFoodQuantity: React.FC = () => {
   return (

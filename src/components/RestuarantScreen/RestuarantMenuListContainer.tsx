@@ -1,7 +1,7 @@
 import React from "react";
 import { Animated } from "react-native";
 import { useRestuarantStore } from "../../stores";
-import { RestuarantInfoCommonProps } from "./RestuarantCarouselDots";
+import { RestuarantInfoCommonProps } from "./RestuarantFood/RestuarantCarouselDots";
 import RestuarantMenuListItem from "./RestuarantMenuListItem";
 
 const RestuarantMenuListContainer: React.FC<RestuarantInfoCommonProps> = ({

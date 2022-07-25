@@ -1,15 +1,15 @@
 import React, { Fragment } from "react";
 import { Animated, Image, Text, View } from "react-native";
-import { icons } from "../../constants";
-import { SIZES } from "../../constants/theme";
-import { useRestuarantStore } from "../../stores";
+import { icons } from "../../../constants";
+import { SIZES } from "../../../constants/theme";
+import { useRestuarantStore } from "../../../stores";
 import {
   IRestaurantItem,
   IRestaurantMenuItem,
-} from "../../stores/useDataStore";
-import { tw } from "../../utils";
+} from "../../../stores/useDataStore";
+import { tw } from "../../../utils";
 import RestuarantCarouselDots from "./RestuarantCarouselDots";
-import RestuarantMenuList from "./RestuarantMenuListContainer";
+import RestuarantMenuList from "../RestuarantMenuListContainer";
 
 interface RestuarantFoodInfoProps {
   item: IRestaurantMenuItem;

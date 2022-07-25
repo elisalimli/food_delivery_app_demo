@@ -8,9 +8,9 @@ import {
   IRestaurantMenuItem,
 } from "../../stores/useDataStore";
 import { tw } from "../../utils";
-import RestuarantFoodImage from "./RestuarantFoodImage";
-import RestuarantFoodInfo from "./RestuarantFoodInfo";
-import RestuarantFoodQuantity from "./RestuarantFoodQuantity";
+import RestuarantFoodImage from "./RestuarantFood/RestuarantFoodImage";
+import RestuarantFoodInfo from "./RestuarantFood/RestuarantFoodInfo";
+import RestuarantFoodQuantity from "./RestuarantFood/RestuarantFoodQuantity";
 
 interface RestuarantMenuListItemProps {
   item: IRestaurantMenuItem;

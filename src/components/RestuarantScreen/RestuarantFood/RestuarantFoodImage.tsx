@@ -1,6 +1,6 @@
 import React from "react";
 import { Image, ImageSourcePropType, View } from "react-native";
-import { SIZES } from "../../constants/theme";
+import { SIZES } from "../../../constants/theme";
 
 interface RestuarantFoodImageProps {
   photo: ImageSourcePropType;

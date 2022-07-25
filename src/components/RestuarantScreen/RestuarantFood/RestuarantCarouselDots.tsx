@@ -1,9 +1,9 @@
 import React from "react";
 import { Animated, View } from "react-native";
-import { SIZES } from "../../constants/theme";
-import { useGetColor } from "../../hooks";
-import { useRestuarantStore } from "../../stores";
-import { tw } from "../../utils";
+import { SIZES } from "../../../constants/theme";
+import { useGetColor } from "../../../hooks";
+import { useRestuarantStore } from "../../../stores";
+import { tw } from "../../../utils";
 
 export interface RestuarantInfoCommonProps {
   scrollX: Animated.Value;
