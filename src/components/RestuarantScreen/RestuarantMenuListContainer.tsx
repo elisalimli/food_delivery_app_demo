@@ -14,7 +14,7 @@ const RestuarantMenuListContainer: React.FC<RestuarantInfoCommonProps> = ({
   return (
     <Animated.ScrollView
       horizontal
-      snapToAlignment={"center"}
+      // snapToAlignment={"center"}
       pagingEnabled
       showsHorizontalScrollIndicator={false}
       scrollEventThrottle={16}

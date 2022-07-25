@@ -1,5 +1,12 @@
 import React from "react";
-import { Animated, Image, Text, TouchableOpacity, View } from "react-native";
+import {
+  Animated,
+  Image,
+  ScrollView,
+  Text,
+  TouchableOpacity,
+  View,
+} from "react-native";
 import { icons } from "../../constants";
 import { SIZES } from "../../constants/theme";
 import { useRestuarantStore } from "../../stores";
@@ -24,7 +31,7 @@ const RestuarantMenuListItem: React.FC<RestuarantMenuListItemProps> = ({
   } = useRestuarantStore();
 
   return (
-    <View>
+    <ScrollView showsVerticalScrollIndicator={false}>
       <View
         style={{
           height: SIZES.WINDOW_HEIGHT * 0.375,
@@ -36,7 +43,7 @@ const RestuarantMenuListItem: React.FC<RestuarantMenuListItemProps> = ({
         <RestuarantFoodQuantity />
       </View>
       <RestuarantFoodInfo item={item} />
-    </View>
+    </ScrollView>
   );
 };
 
