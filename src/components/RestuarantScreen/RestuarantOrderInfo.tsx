@@ -8,7 +8,7 @@ import RBCOrderButton from "./RestuarantBotomCard./RBCOrderButton";
 import RestuarantCarouselDots from "./RestuarantFood/RestuarantCarouselDots";
 import RestuarantMenuList from "./RestuarantMenuListContainer";
 
-const RestuarantInfo = () => {
+const RestuarantOrderInfo = () => {
   const {
     restuarantItem: { menu },
   } = useRestuarantStore();
@@ -19,7 +19,7 @@ const RestuarantInfo = () => {
     <View style={tw`flex-1`}>
       <View style={tw`flex-9`}>
         <RestuarantMenuList scrollX={scrollX} />
-        <RestuarantCarouselDots scrollX={scrollX} />
+        {menu?.length > 1 && <RestuarantCarouselDots scrollX={scrollX} />}
       </View>
       {/* Order section */}
       <View style={tw`mt-4 bg-white rounded-tr-4xl rounded-tl-4xl p-8`}>
@@ -36,4 +36,4 @@ const RestuarantInfo = () => {
   );
 };
 
-export default RestuarantInfo;
+export default RestuarantOrderInfo;

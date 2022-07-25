@@ -3,6 +3,7 @@ import { NativeStackScreenProps } from "@react-navigation/native-stack";
 import React from "react";
 import { ColorValue, Image, Text } from "react-native";
 import { icons } from "../constants";
+import { useGetColor } from "../hooks";
 import { Home } from "../screens";
 import { tw } from "../utils";
 import CustomTabBar from "./CustomTabBar";
@@ -51,8 +52,8 @@ export default function Tabs() {
                 width: 25,
                 height: 25,
                 tintColor: focused
-                  ? (tw`text-primary`.color as ColorValue)
-                  : (tw`text-secondary`.color as ColorValue),
+                  ? useGetColor("primary")
+                  : useGetColor("secondary"),
               }}
             />
           );

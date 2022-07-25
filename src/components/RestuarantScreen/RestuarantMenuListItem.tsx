@@ -26,10 +26,6 @@ interface RestuarantMenuListItemProps {
 const RestuarantMenuListItem: React.FC<RestuarantMenuListItemProps> = ({
   item,
 }) => {
-  const {
-    restuarantItem: { menu },
-  } = useRestuarantStore();
-
   return (
     <ScrollView showsVerticalScrollIndicator={false}>
       <View
@@ -40,7 +36,7 @@ const RestuarantMenuListItem: React.FC<RestuarantMenuListItemProps> = ({
         {/* Food image */}
         <RestuarantFoodImage photo={item.photo} />
         {/* Quantity */}
-        <RestuarantFoodQuantity />
+        <RestuarantFoodQuantity menuItem={item} />
       </View>
       <RestuarantFoodInfo item={item} />
     </ScrollView>
