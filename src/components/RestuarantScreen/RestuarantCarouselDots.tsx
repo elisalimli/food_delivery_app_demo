@@ -13,7 +13,7 @@ const RestuarantCarouselDots: React.FC<{ scrollX: Animated.Value }> = ({
   } = useRestuarantStore();
 
   return (
-    <View style={tw`flex-row`}>
+    <View style={tw`flex-row justify-center items-center mt-8`}>
       {menu.map((m, index) => {
         const dotPosition = Animated.divide(scrollX, SIZES.WINDOW_WIDTH);
         const opacity = dotPosition.interpolate({
@@ -24,7 +24,7 @@ const RestuarantCarouselDots: React.FC<{ scrollX: Animated.Value }> = ({
 
         const dotSize = dotPosition.interpolate({
           inputRange: [index - 1, index, index + 1],
-          outputRange: [0.6, 1, 0.6],
+          outputRange: [0.8 * 8, 10, 0.8 * 8],
           extrapolate: "clamp",
         });
         const dotColor = dotPosition.interpolate({
@@ -42,7 +42,7 @@ const RestuarantCarouselDots: React.FC<{ scrollX: Animated.Value }> = ({
             style={[
               tw`w-3 h-3 rounded-full  mx-3`,
 
-              { transform: [{ scale: dotSize }] },
+              { width: dotSize, height: dotSize },
               {
                 backgroundColor: dotColor,
               },
