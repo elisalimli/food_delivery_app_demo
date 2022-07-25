@@ -46,7 +46,7 @@ const RightHeader = () => {
   );
 };
 
-const Header = () => {
+const HomeHeader = () => {
   return (
     <View style={tw`flex-row h-16 pt-4 mb-8 `}>
       <LeftHeader />
@@ -56,4 +56,4 @@ const Header = () => {
   );
 };
 
-export default Header;
+export default HomeHeader;

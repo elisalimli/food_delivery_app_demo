@@ -1,13 +1,12 @@
 import { Dimensions } from "react-native";
 const { width, height } = Dimensions.get("window");
 
-
-
 export const SIZES = {
-    WINDOW_WIDTH:width,
-    WINDOW_HEIGHT:height
+  WINDOW_WIDTH: width,
+  WINDOW_HEIGHT: height,
 };
 
+console.log("sizes", SIZES, Dimensions.get("screen"));
 // export const FONTS = {
 //     largeTitle: { fontFamily: "Roboto-regular", fontSize: SIZES.largeTitle, lineHeight: 55 },
 //     h1: { fontFamily: "Roboto-Black", fontSize: SIZES.h1, lineHeight: 36 },
