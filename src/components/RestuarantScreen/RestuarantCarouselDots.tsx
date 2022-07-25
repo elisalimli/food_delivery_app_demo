@@ -5,7 +5,11 @@ import { useGetColor } from "../../hooks";
 import { useRestuarantStore } from "../../stores";
 import { tw } from "../../utils";
 
-const RestuarantCarouselDots: React.FC<{ scrollX: Animated.Value }> = ({
+export interface RestuarantInfoCommonProps {
+  scrollX: Animated.Value;
+}
+
+const RestuarantCarouselDots: React.FC<RestuarantInfoCommonProps> = ({
   scrollX,
 }) => {
   const {

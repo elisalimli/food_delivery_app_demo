@@ -314,7 +314,7 @@ const restaurantData = [
   },
 ];
 
-interface IRestaurantItemMenu {
+export interface IRestaurantMenuItem {
   menuId: number;
   name: string;
   photo: any;
@@ -339,7 +339,7 @@ export interface IRestaurantItem {
     avatar: any;
     name: string;
   };
-  menu: IRestaurantItemMenu[];
+  menu: IRestaurantMenuItem[];
 }
 
 export interface ICategory {
