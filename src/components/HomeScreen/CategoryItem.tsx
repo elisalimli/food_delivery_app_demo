@@ -5,14 +5,14 @@ import { ICategory } from "../../stores/useDataStore";
 import { tw } from "../../utils";
 
 const Category = ({ item }: { item: ICategory }) => {
-  const { setSelectedCategoryId, setRestuarants, selectedCategoryId } =
+  const { setSelectedCategoryId, setRestaurants, selectedCategoryId } =
     useDataStore();
   const { id, name, icon } = item;
 
   const isActive = selectedCategoryId === id;
   const handlePress = () => {
     setSelectedCategoryId(id);
-    setRestuarants(id, false);
+    setRestaurants(id, false);
   };
 
   return (

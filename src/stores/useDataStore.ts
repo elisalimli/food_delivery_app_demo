@@ -353,17 +353,17 @@ export const useDataStore = create(
     {
       currentLocation: initialCurrentLocation,
       categories: categoryData,
-      restuarants: restaurantData,
+      Restaurants: restaurantData,
       selectedCategoryId: 2,
     },
     (set) => ({
       setSelectedCategoryId: (id: number) =>
         set(() => ({ selectedCategoryId: id })),
-      setRestuarants: (categoryId?: number | null, reset?: boolean) => {
+      setRestaurants: (categoryId?: number | null, reset?: boolean) => {
         const newRestuarantData = reset
           ? restaurantData
           : restaurantData.filter((r) => r.categories.includes(categoryId!));
-        set(() => ({ restuarants: newRestuarantData }));
+        set(() => ({ Restaurants: newRestuarantData }));
       },
     })
   )

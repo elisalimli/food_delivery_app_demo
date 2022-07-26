@@ -5,16 +5,17 @@ import { IRestaurantItem, IRestaurantMenuItem } from "./useDataStore";
 
 type IOrderListItem = IRestaurantMenuItem & { quantity: number };
 
-export const useRestuarantStore = create(
+export const useRestaurantstore = create(
   combine(
     {
-      restuarantItem: {} as IRestaurantItem,
+      // selected restuarant
+      currentRestuarant: {} as IRestaurantItem,
       cartPrice: 0,
       orderList: [] as IOrderListItem[],
     },
     (set) => ({
-      setRestuarantItem: (item: IRestaurantItem) =>
-        set(() => ({ restuarantItem: item })),
+      setCurrentRestuarant: (item: IRestaurantItem) =>
+        set(() => ({ currentRestuarant: item })),
       addCardItem: (item: IRestaurantMenuItem) =>
         set((prev) => {
           let newOrderList = prev.orderList;
@@ -48,10 +49,10 @@ export const useRestuarantStore = create(
   )
 );
 
-export default useRestuarantStore;
+export default useRestaurantstore;
 
 export const useGetOrderCount = (menuId: number) => {
-  const { orderList } = useRestuarantStore();
+  const { orderList } = useRestaurantstore();
   const currentMenu = orderList?.filter((i) => i.menuId == menuId);
   return currentMenu[0]?.quantity || 0;
 };

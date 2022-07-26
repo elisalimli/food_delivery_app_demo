@@ -1,6 +1,6 @@
 import React from "react";
 import { Animated, View } from "react-native";
-import { useRestuarantStore } from "../../stores";
+import { useRestaurantstore } from "../../stores";
 import { tw } from "../../utils";
 import RestuarantBottomCardHeader from "./RestuarantBotomCard./RBCHeader";
 import RBCLocationAndCardNumber from "./RestuarantBotomCard./RBCLocationAndCardNumber";
@@ -10,8 +10,8 @@ import RestuarantMenuList from "./RestuarantMenuListContainer";
 
 const RestuarantOrderInfo = () => {
   const {
-    restuarantItem: { menu },
-  } = useRestuarantStore();
+    currentRestuarant: { menu },
+  } = useRestaurantstore();
 
   const scrollX = new Animated.Value(0);
 

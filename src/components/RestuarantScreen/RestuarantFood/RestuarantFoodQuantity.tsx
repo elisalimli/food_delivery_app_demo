@@ -1,7 +1,7 @@
 import React, { useCallback, useEffect, useMemo } from "react";
 import { Text, TouchableOpacity, View } from "react-native";
 import { IRestaurantMenuItem } from "../../../stores/useDataStore";
-import useRestuarantStore, {
+import useRestaurantstore, {
   useGetOrderCount,
 } from "../../../stores/useRestuarantStore";
 import { tw } from "../../../utils";
@@ -13,7 +13,7 @@ interface RestuarantFoodQuantityProps {
 const RestuarantFoodQuantity: React.FC<RestuarantFoodQuantityProps> = ({
   menuItem,
 }) => {
-  const { addCardItem, removeCardItem } = useRestuarantStore();
+  const { addCardItem, removeCardItem } = useRestaurantstore();
   const itemCount = useGetOrderCount(menuItem.menuId);
 
   useEffect(() => console.log("re-rend2"));

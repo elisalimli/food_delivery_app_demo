@@ -2,7 +2,7 @@ import React from "react";
 import { Animated, View } from "react-native";
 import { SIZES } from "../../../constants/theme";
 import { useGetColor } from "../../../hooks";
-import { useRestuarantStore } from "../../../stores";
+import { useRestaurantstore } from "../../../stores";
 import { tw } from "../../../utils";
 
 export interface RestuarantInfoCommonProps {
@@ -13,8 +13,8 @@ const RestuarantCarouselDots: React.FC<RestuarantInfoCommonProps> = ({
   scrollX,
 }) => {
   const {
-    restuarantItem: { menu },
-  } = useRestuarantStore();
+    currentRestuarant: { menu },
+  } = useRestaurantstore();
 
   return (
     <View style={tw`flex-row justify-center items-center mt-8`}>

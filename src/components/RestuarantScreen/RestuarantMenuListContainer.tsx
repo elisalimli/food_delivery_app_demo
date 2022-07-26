@@ -1,6 +1,6 @@
 import React from "react";
 import { Animated } from "react-native";
-import { useRestuarantStore } from "../../stores";
+import { useRestaurantstore } from "../../stores";
 import { RestuarantInfoCommonProps } from "./RestuarantFood/RestuarantCarouselDots";
 import RestuarantMenuListItem from "./RestuarantMenuListItem";
 import uuid from "react-native-uuid";
@@ -9,8 +9,8 @@ const RestuarantMenuListContainer: React.FC<RestuarantInfoCommonProps> = ({
   scrollX,
 }) => {
   const {
-    restuarantItem: { menu },
-  } = useRestuarantStore();
+    currentRestuarant: { menu },
+  } = useRestaurantstore();
 
   return (
     <Animated.FlatList

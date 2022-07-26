@@ -6,13 +6,13 @@ import RestaurantItem from "./Restuarant/RestuarantItem";
 import uuid from "react-native-uuid";
 
 const Restaurants = () => {
-  const { restuarants, setRestuarants } = useDataStore();
+  const { Restaurants, setRestaurants } = useDataStore();
   const [refreshing, setRefreshing] = useState(false);
 
   const onRefresh = useCallback(() => {
     setRefreshing(true);
     // resetting the resturants
-    setRestuarants(null, true);
+    setRestaurants(null, true);
 
     setRefreshing(false);
   }, []);
@@ -22,7 +22,7 @@ const Restaurants = () => {
         refreshControl={
           <RefreshControl refreshing={refreshing} onRefresh={onRefresh} />
         }
-        data={restuarants}
+        data={Restaurants}
         showsVerticalScrollIndicator={false}
         keyExtractor={(item) => `${item.id}-${uuid.v4()}`}
         renderItem={(props) => <RestaurantItem {...props} />}
