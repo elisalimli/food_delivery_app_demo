@@ -1,12 +1,10 @@
 import { combine } from "zustand/middleware";
 import create from "zustand";
 import { IRestaurantItem, IRestaurantMenuItem } from "./useDataStore";
-
-const findOrderItem = (orderList, menuId) => {
-  return orderList.findIndex((or) => or.menuId == menuId);
-};
+import { findOrderItem } from "../utils";
 
 type IOrderListItem = IRestaurantMenuItem & { quantity: number };
+export type IOrderList = IOrderListItem[];
 
 export const useRestaurantstore = create(
   combine(
@@ -14,7 +12,7 @@ export const useRestaurantstore = create(
       // selected restuarant
       currentRestuarant: {} as IRestaurantItem,
       cartPrice: 0,
-      orderList: [] as IOrderListItem[],
+      orderList: [] as IOrderList,
     },
     (set) => ({
       setCurrentRestuarant: (item: IRestaurantItem) =>

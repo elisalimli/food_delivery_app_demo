@@ -1,4 +1,4 @@
-import React, { useCallback, useEffect, useMemo } from "react";
+import React from "react";
 import { Pressable, Text, TouchableOpacity, View } from "react-native";
 import { IRestaurantMenuItem } from "../../../stores/useDataStore";
 import useRestaurantstore, {
@@ -17,8 +17,6 @@ const RestuarantFoodQuantity: React.FC<RestuarantFoodQuantityProps> = ({
   const { addCardItem, removeCardItem, removeWholeCardItem } =
     useRestaurantstore();
   const itemCount = useGetOrderCount(menuId);
-
-  useEffect(() => console.log("re-rend2"));
 
   const handleAddCardItem = () => addCardItem(menuItem);
   const handleRemoveCardItem = () => {
