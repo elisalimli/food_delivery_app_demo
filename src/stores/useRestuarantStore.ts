@@ -22,16 +22,26 @@ export const useRestuarantStore = create(
           const isExist =
             newOrderList.filter((i) => i.menuId == item.menuId)?.length != 0;
           if (isExist) {
+            // if exist then incrase quantity
             newOrderList = newOrderList.map((or) => ({
               ...or,
               quantity: or?.quantity + 1,
             }));
           } else {
+            // if doesn't exist then add a new one
             newOrderList.push({
               ...item,
               quantity: 1,
             });
           }
+          return { orderList: newOrderList };
+        }),
+      removeCardItem: (item: IRestaurantMenuItem) =>
+        set((prev) => {
+          const newOrderList = prev.orderList.filter(
+            (or) => or.menuId != item.menuId
+          );
+
           return { orderList: newOrderList };
         }),
     })

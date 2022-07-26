@@ -23,9 +23,9 @@ interface RestuarantMenuListItemProps {
   item: IRestaurantMenuItem;
 }
 
-const RestuarantMenuListItem: React.FC<RestuarantMenuListItemProps> = ({
+const RestuarantMenuListItem = React.memo(function MyComponent({
   item,
-}) => {
+}: RestuarantMenuListItemProps) {
   return (
     <ScrollView showsVerticalScrollIndicator={false}>
       <View
@@ -41,6 +41,6 @@ const RestuarantMenuListItem: React.FC<RestuarantMenuListItemProps> = ({
       <RestuarantFoodInfo item={item} />
     </ScrollView>
   );
-};
+});
 
 export default RestuarantMenuListItem;

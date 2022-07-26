@@ -3,6 +3,7 @@ import { Animated } from "react-native";
 import { useRestuarantStore } from "../../stores";
 import { RestuarantInfoCommonProps } from "./RestuarantFood/RestuarantCarouselDots";
 import RestuarantMenuListItem from "./RestuarantMenuListItem";
+import uuid from "react-native-uuid";
 
 const RestuarantMenuListContainer: React.FC<RestuarantInfoCommonProps> = ({
   scrollX,
@@ -12,7 +13,10 @@ const RestuarantMenuListContainer: React.FC<RestuarantInfoCommonProps> = ({
   } = useRestuarantStore();
 
   return (
-    <Animated.ScrollView
+    <Animated.FlatList
+      data={menu}
+      renderItem={(props) => <RestuarantMenuListItem item={props.item} />}
+      keyExtractor={(item) => `menu-${item.menuId}-${uuid.v4()}`}
       horizontal
       // snapToAlignment={"center"}
       pagingEnabled
@@ -22,11 +26,7 @@ const RestuarantMenuListContainer: React.FC<RestuarantInfoCommonProps> = ({
         [{ nativeEvent: { contentOffset: { x: scrollX as any } } }],
         { useNativeDriver: false }
       )}
-    >
-      {menu?.map((item, id) => (
-        <RestuarantMenuListItem item={item} key={`menu-${id}`} />
-      ))}
-    </Animated.ScrollView>
+    />
   );
 };
 
