@@ -1,4 +1,4 @@
 import useDataStore from "./useDataStore";
-import useRestaurantstore from "./useRestuarantStore";
+import useRestaurantStore from "./useRestuarantStore";
 
-export { useDataStore, useRestaurantstore };
+export { useDataStore, useRestaurantStore };

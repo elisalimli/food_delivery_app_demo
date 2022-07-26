@@ -2,7 +2,7 @@ import React from "react";
 import { Animated, View } from "react-native";
 import { SIZES } from "../../../constants/theme";
 import { useGetColor } from "../../../hooks";
-import { useRestaurantstore } from "../../../stores";
+import { useRestaurantStore } from "../../../stores";
 import { tw } from "../../../utils";
 
 export interface RestuarantInfoCommonProps {
@@ -14,7 +14,7 @@ const RestuarantCarouselDots: React.FC<RestuarantInfoCommonProps> = ({
 }) => {
   const {
     currentRestuarant: { menu },
-  } = useRestaurantstore();
+  } = useRestaurantStore();
 
   return (
     <View style={tw`flex-row justify-center items-center mt-8`}>

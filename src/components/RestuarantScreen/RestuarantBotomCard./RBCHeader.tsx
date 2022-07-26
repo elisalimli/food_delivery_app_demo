@@ -1,11 +1,11 @@
 import React from "react";
 import { Text, View, StyleSheet } from "react-native";
-import { useRestaurantstore } from "../../../stores";
+import { useRestaurantStore } from "../../../stores";
 import { useGetAllOrderCount } from "../../../stores/useRestuarantStore";
 import { tw } from "../../../utils";
 
 const RestuarantBottomCardHeader = () => {
-  const { orderList } = useRestaurantstore();
+  const { orderList } = useRestaurantStore();
   const [allOrderCount, sum] = useGetAllOrderCount();
   return (
     <View

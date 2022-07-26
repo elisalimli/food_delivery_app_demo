@@ -2,7 +2,7 @@ import { useNavigation } from "@react-navigation/native";
 import React from "react";
 import { TouchableOpacity, View } from "react-native";
 import { RootStackNavigationProps } from "../../../Screens";
-import { useRestaurantstore } from "../../../stores";
+import { useRestaurantStore } from "../../../stores";
 import { IRestaurantItem } from "../../../stores/useDataStore";
 import { tw } from "../../../utils";
 import RestuarantDuration from "./RestuarantDuration";
@@ -12,7 +12,7 @@ import RestuarantPhoto from "./RestuarantPhoto";
 const RestaurantItem = ({ item }: { item: IRestaurantItem }) => {
   const { photo, duration } = item;
   const navigation = useNavigation<RootStackNavigationProps>();
-  const { setCurrentRestuarant } = useRestaurantstore();
+  const { setCurrentRestuarant } = useRestaurantStore();
 
   const handlePress = () => {
     setCurrentRestuarant(item);

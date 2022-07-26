@@ -6,7 +6,7 @@ import { findOrderItem } from "../utils";
 type IOrderListItem = IRestaurantMenuItem & { quantity: number };
 export type IOrderList = IOrderListItem[];
 
-export const useRestaurantstore = create(
+export const useRestaurantStore = create(
   combine(
     {
       // selected restuarant
@@ -62,10 +62,10 @@ export const useRestaurantstore = create(
   )
 );
 
-export default useRestaurantstore;
+export default useRestaurantStore;
 
 export const useGetAllOrderCount = () => {
-  const { orderList } = useRestaurantstore();
+  const { orderList } = useRestaurantStore();
   let sumOfOrders = 0;
   let sumOfOrderPrice = 0;
   for (let i = 0; i < orderList.length; i++) {
@@ -76,7 +76,7 @@ export const useGetAllOrderCount = () => {
 };
 
 export const useGetOrderCount = (menuId: number) => {
-  const { orderList } = useRestaurantstore();
+  const { orderList } = useRestaurantStore();
   const currentMenu = orderList?.filter((i) => i.menuId == menuId);
   return currentMenu[0]?.quantity || 0;
 };

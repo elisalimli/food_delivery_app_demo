@@ -9,7 +9,7 @@ import {
 } from "react-native";
 import { icons } from "../../constants";
 import { SIZES } from "../../constants/theme";
-import { useRestaurantstore } from "../../stores";
+import { useRestaurantStore } from "../../stores";
 import {
   IRestaurantItem,
   IRestaurantMenuItem,

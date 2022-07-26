@@ -3,14 +3,14 @@ import React from "react";
 import { Image, Pressable, Text, View } from "react-native";
 import { TouchableOpacity } from "react-native-gesture-handler";
 import { icons, images } from "../../constants";
-import { useRestaurantstore } from "../../stores";
+import { useRestaurantStore } from "../../stores";
 import { tw } from "../../utils";
 
 const RestuarantHeader = () => {
   const navigation = useNavigation();
   const {
     currentRestuarant: { name },
-  } = useRestaurantstore();
+  } = useRestaurantStore();
 
   return (
     // @todo fix margin top problem

@@ -1,7 +1,7 @@
 import React from "react";
 import { Pressable, Text, TouchableOpacity, View } from "react-native";
 import { IRestaurantMenuItem } from "../../../stores/useDataStore";
-import useRestaurantstore, {
+import useRestaurantStore, {
   useGetOrderCount,
 } from "../../../stores/useRestuarantStore";
 import { tw } from "../../../utils";
@@ -15,7 +15,7 @@ const RestuarantFoodQuantity: React.FC<RestuarantFoodQuantityProps> = ({
 }) => {
   const { menuId } = menuItem;
   const { addCardItem, removeCardItem, removeWholeCardItem } =
-    useRestaurantstore();
+    useRestaurantStore();
   const itemCount = useGetOrderCount(menuId);
 
   const handleAddCardItem = () => addCardItem(menuItem);
