@@ -13,8 +13,10 @@ interface RestuarantFoodQuantityProps {
 const RestuarantFoodQuantity: React.FC<RestuarantFoodQuantityProps> = ({
   menuItem,
 }) => {
-  const { addCardItem, removeCardItem } = useRestaurantstore();
-  const itemCount = useGetOrderCount(menuItem.menuId);
+  const { menuId } = menuItem;
+  const { addCardItem, removeCardItem, removeWholeCardItem } =
+    useRestaurantstore();
+  const itemCount = useGetOrderCount(menuId);
 
   useEffect(() => console.log("re-rend2"));
 
@@ -31,10 +33,13 @@ const RestuarantFoodQuantity: React.FC<RestuarantFoodQuantityProps> = ({
     >
       <Pressable
         onLongPress={() => {
-          console.log("loooong press");
+          removeWholeCardItem(menuId);
         }}
         onPress={handleRemoveCardItem}
-        style={tw`px-2 py-1 bg-white rounded-tl-2xl rounded-bl-2xl`}
+        style={({ pressed }) => [
+          tw`px-2 py-1 bg-white rounded-tl-2xl rounded-bl-2xl`,
+          { opacity: pressed ? 0.2 : 1 },
+        ]}
       >
         <Text style={tw`font-medium text-xl p-1`}>-</Text>
       </Pressable>

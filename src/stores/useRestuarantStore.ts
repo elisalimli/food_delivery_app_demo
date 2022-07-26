@@ -52,6 +52,14 @@ export const useRestaurantstore = create(
 
           return { orderList: newOrderList };
         }),
+      removeWholeCardItem: (menuId: number) =>
+        set((prev) => {
+          const newOrderList = prev.orderList.filter(
+            (or) => or.menuId !== menuId
+          );
+
+          return { orderList: newOrderList };
+        }),
     })
   )
 );
