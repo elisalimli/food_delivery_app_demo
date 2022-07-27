@@ -5,8 +5,8 @@ import { icons, images } from "../constants";
 const initialCurrentLocation = {
   streetName: "Kuching",
   gps: {
-    latitude: 1.5496614931250685,
-    longitude: 110.36381866919922,
+    latitude: 40.028554,
+    longitude: 48.940024,
   },
 };
 
@@ -78,8 +78,8 @@ const restaurantData = [
     photo: images.burger_restaurant_1,
     duration: "30 - 45 min",
     location: {
-      latitude: 1.5347282806345879,
-      longitude: 110.35632207358996,
+      latitude: 40.032841,
+      longitude: 48.940996,
     },
     courier: {
       avatar: images.avatar_1,
