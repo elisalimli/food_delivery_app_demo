@@ -1,3 +1,5 @@
+
+
 {
   "expo": {
     "name": "FoodDeliveryApp",
@@ -25,19 +27,9 @@
       "adaptiveIcon": {
         "foregroundImage": "./assets/images/adaptive-icon.png",
         "backgroundColor": "#ffffff"
-      },
-      "package": "com.quantum17.FoodDeliveryApp"
+      }
     },
     "web": {
       "favicon": "./assets/images/favicon.png"
-    },
-    "plugins": [
-      [
-        "@rnmapbox/maps",
-        {
-          "RNMapboxMapsImpl": "maplibre"
-        }
-      ]
-    ]
-  }
-}
+    }
+  }}
