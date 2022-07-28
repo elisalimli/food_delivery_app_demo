@@ -1,6 +1,7 @@
 import { combine } from "zustand/middleware";
 import create from "zustand";
 import { icons, images } from "../constants";
+import * as Location from "expo-location";
 
 const initialCurrentLocation = {
   streetName: "Kuching",
@@ -359,6 +360,15 @@ export const useDataStore = create(
     (set) => ({
       setSelectedCategoryId: (id: number) =>
         set(() => ({ selectedCategoryId: id })),
+      setCurrentLocation: (location: Location.LocationObject) => {
+        console.log("setting locati2on");
+        set(() => ({
+          currentLocation: {
+            streetName: "Kuching",
+            gps: location?.coords,
+          },
+        }));
+      },
       setRestaurants: (categoryId?: number | null, reset?: boolean) => {
         const newRestuarantData = reset
           ? restaurantData

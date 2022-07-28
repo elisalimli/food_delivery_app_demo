@@ -40,7 +40,6 @@ export const useRestaurantStore = create(
         }),
       removeCardItem: (item: IRestaurantMenuItem) =>
         set((prev) => {
-          console.log(item);
           const newOrderList = prev.orderList;
           const itemIdx = findOrderItem(newOrderList, item.menuId);
           newOrderList[itemIdx] = {
