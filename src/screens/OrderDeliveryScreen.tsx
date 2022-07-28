@@ -3,12 +3,13 @@ import { Image, Text, TouchableOpacity, View } from "react-native";
 import Map from "../components/OrderDeliveryScreen/Map";
 import { icons, images } from "../constants";
 import { useLocation } from "../hooks/useLocation";
+import { useRestaurantStore } from "../stores";
 import { tw } from "../utils";
 
 const OrderDelivery = () => {
   // getting current location
   // useLocation();
-
+  const { currentRestuarant } = useRestaurantStore();
   return (
     <View style={tw`flex-1 bg-white items-center justify-center`}>
       <Map />
@@ -31,11 +32,13 @@ const OrderDelivery = () => {
             <View style={tw`flex-row`}>
               <Image
                 style={tw`w-12 h-12 rounded-full`}
-                source={images.avatar_3}
+                source={currentRestuarant.courier.avatar}
               />
               <View style={tw`justify-center ml-2`}>
-                <Text style={tw`h3`}>Bruce Revans</Text>
-                <Text style={tw`text-darkgray/60`}>Burgers story</Text>
+                <Text style={tw`h3`}>{currentRestuarant.courier.name}</Text>
+                <Text style={tw`text-darkgray/60`}>
+                  {currentRestuarant.name}
+                </Text>
               </View>
             </View>
             <View style={tw`flex-row items-center`}>
@@ -43,7 +46,7 @@ const OrderDelivery = () => {
                 source={icons.star}
                 style={tw`w-4 h-4 tint-primary mr-2`}
               />
-              <Text>4.7</Text>
+              <Text>{currentRestuarant.rating}</Text>
             </View>
           </View>
           <View style={tw`flex-row justify-between mt-4 px-2`}>
