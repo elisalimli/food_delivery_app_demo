@@ -18,9 +18,6 @@ const Map = () => {
 
   return (
     <MapView
-      userInterfaceStyle={"dark"}
-      showsUserLocation
-      showsMyLocationButton
       region={{
         latitude: (fromLocation?.latitude + toLocation?.latitude) / 2,
         longitude: (fromLocation?.longitude + toLocation?.longitude) / 2,
