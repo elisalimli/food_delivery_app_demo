@@ -2,10 +2,13 @@ import React from "react";
 import { Image, Text, View } from "react-native";
 
 import MapView, { Marker, Polyline } from "react-native-maps";
+import MapViewDirections from "react-native-maps-directions";
 import { icons } from "../../constants";
 import { useGetColor } from "../../hooks";
 import { useDataStore, useRestaurantStore } from "../../stores";
 import { tw } from "../../utils";
+// @ts-ignore
+import { GOOGLE_MAPS_APIKEY } from "@env";
 
 const Map = () => {
   const { currentLocation } = useDataStore();
@@ -18,6 +21,7 @@ const Map = () => {
 
   return (
     <MapView
+      provider="google"
       region={{
         latitude: (fromLocation?.latitude + toLocation?.latitude) / 2,
         longitude: (fromLocation?.longitude + toLocation?.longitude) / 2,
@@ -40,12 +44,18 @@ const Map = () => {
           <Image source={icons.pin} style={tw`w-4 h-4 tint-white`} />
         </View>
       </Marker>
-      <Polyline
+      <MapViewDirections
+        origin={fromLocation}
+        destination={toLocation}
+        apikey={GOOGLE_MAPS_APIKEY}
+      />
+
+      {/* <Polyline
         coordinates={[toLocation, fromLocation]}
         strokeColor={useGetColor("primary")} // fallback for when `strokeColors` is not supported by the map-provider
         strokeColors={["#000"]}
         strokeWidth={6}
-      />
+      /> */}
     </MapView>
   );
 };
