@@ -3,13 +3,15 @@ import { Image, Text, TouchableOpacity, View } from "react-native";
 import Map from "../components/OrderDeliveryScreen/Map";
 import { icons, images } from "../constants";
 import { useLocation } from "../hooks/useLocation";
-import { useRestaurantStore } from "../stores";
+import { useMapStore, useRestaurantStore } from "../stores";
 import { tw } from "../utils";
 
 const OrderDelivery = () => {
   // getting current location
   // useLocation();
   const { currentRestuarant } = useRestaurantStore();
+  const { result } = useMapStore();
+
   return (
     <View style={tw`flex-1 bg-white items-center justify-center`}>
       <Map />
@@ -23,7 +25,7 @@ const OrderDelivery = () => {
             <Text style={tw`font-medium`}>Park Avenue,New York</Text>
           </View>
           {/* Duration */}
-          <Text style={tw`h4`}>7 mins</Text>
+          <Text style={tw`h4`}>{result?.duration?.toFixed(1)} mins</Text>
         </View>
       </View>
       <View style={tw`absolute bottom-5 w-full`}>

@@ -122,8 +122,8 @@ const restaurantData = [
     photo: images.pizza_restaurant,
     duration: "15 - 20 min",
     location: {
-      latitude: 1.556306570595712,
-      longitude: 110.35504616746915,
+      latitude: 55.556306570595712,
+      longitude: 40.35504616746915,
     },
     courier: {
       avatar: images.avatar_2,
